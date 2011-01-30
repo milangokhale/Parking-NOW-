@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+android:id="@+id/widget30"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ImageView android:onClick="TwitterBtn_Click" android:layout_width="wrap_content" android:src="@drawable/twitter_logo" android:layout_height="wrap_content" android:id="@+id/widget65" android:layout_x="20dip" android:layout_y="140dip"></ImageView>
+
+
+<ImageView android:onClick="MapsBtn_Click" android:layout_width="wrap_content" android:src="@drawable/maps" android:layout_height="wrap_content" android:id="@+id/Settings" android:layout_x="30dip" android:layout_y="30dip"></ImageView>
+
+
+<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TextView01" android:text="Maps App" android:textStyle="bold" android:layout_x="120dip" android:layout_y="50dip"></TextView>
+<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TextView02" android:textStyle="bold" android:layout_x="120dip" android:text="Twitter Feed App" android:layout_y="170dip"></TextView>
+
+
+<ImageView android:layout_height="wrap_content" android:src="@drawable/settings" android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_x="45dip" android:layout_y="285dip" android:onClick="ParkingBtn_Click"></ImageView>
+<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TextView03" android:textStyle="bold" android:layout_x="120dip" android:layout_y="297dip" android:text="Parking App"></TextView>
+</AbsoluteLayout>

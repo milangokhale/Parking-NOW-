@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="hello">Hello World, Main!</string>
+<string name="app_name">Hello World</string>
+<string-array name="quotes">
+     <item>"Any intelligent fool can make things bigger, more complex, and more violent. It takes a touch of genius -- and a lot of courage -- to move in the opposite direction."</item>
+     <item>"Imagination is more important than knowledge."</item>
+     <item>"Gravitation is not responsible for people falling in love."</item>
+     <item>"I want to know God's thoughts; the rest are details."</item>
+     <item>"The hardest thing in the world to understand is the income tax."</item>
+     <item>"Reality is merely an illusion, albeit a very persistent one."</item>
+     <item>"The only real valuable thing is intuition."</item>
+     <item>"A person starts to live when he can live outside himself."</item>
+     <item>"I am convinced that He (God) does not play dice."</item>
+     <item>"God is subtle but he is not malicious."</item>
+     <item>"Weakness of attitude becomes weakness of character."</item>
+     <item>"I never think of the future. It comes soon enough."</item>
+     <item>"The eternal mystery of the world is its comprehensibility."</item>
+     <item>"Sometimes one pays most for the things one gets for nothing."</item>
+     <item>"Science without religion is lame. Religion without science is blind."</item>
+     <item>"Anyone who has never made a mistake has never tried anything new."</item>
+     <item>"Great spirits have often encountered violent opposition from weak minds."</item>
+     <item>"Everything should be made as simple as possible, but not simpler."</item>
+     <item>"Common sense is the collection of prejudices acquired by age eighteen."</item>
+     <item>"Science is a wonderful thing if one does not have to earn one's living at it."</item>
+     <item>"The secret to creativity is knowing how to hide your sources."</item>
+     <item>"The only thing that interferes with my learning is my education."</item>
+     <item>"God does not care about our mathematical difficulties. He integrates empirically."</item>
+     <item>"The whole of science is nothing more than a refinement of everyday thinking."</item>
+     <item>"Technological progress is like an axe in the hands of a pathological criminal."</item>
+     <item>"Peace cannot be kept by force. It can only be achieved by understanding."</item>
+     <item>"The most incomprehensible thing about the world is that it is comprehensible."</item>
+     <item>"We can't solve problems by using the same kind of thinking we used when we created them."</item>
+     <item>"Education is what remains after one has forgotten everything he learned in school."</item>
+     <item>"The important thing is not to stop questioning. Curiosity has its own reason for existing."</item>
+     <item>"Do not worry about your difficulties in Mathematics. I can assure you mine are still greater."</item>
+     <item>"Equations are more important to me, because politics is for the present, but an equation is something for eternity."</item>
+     <item>"If A is a success in life, then A equals x plus y plus z. Work is x; y is play; and z is keeping your mouth shut."</item>
+     <item>"Two things are infinite: the universe and human stupidity; and I'm not sure about the the universe."</item>
+     <item>"As far as the laws of mathematics refer to reality, they are not certain, as far as they are certain, they do not refer to reality."</item>
+     <item>"Whoever undertakes to set himself up as a judge of Truth and Knowledge is shipwrecked by the laughter of the gods."</item>
+     <item>"I know not with what weapons World War III will be fought, but World War IV will be fought with sticks and stones."</item>
+     <item>"In order to form an immaculate member of a flock of sheep one must, above all, be a sheep."</item>
+     <item>"The fear of death is the most unjustified of all fears, for there's no risk of accident for someone who's dead."</item>
+     <item>"Too many of us look upon Americans as dollar chasers. This is a cruel libel, even if it is reiterated thoughtlessly by the Americans themselves."</item>
+     <item>"Heroism on command, senseless violence, and all the loathsome nonsense that goes by the name of patriotism -- how passionately I hate them!"</item>
+     <item>"No, this trick won't work...How on earth are you ever going to explain in terms of chemistry and physics so important a biological phenomenon as first love?"</item>
+     <item>"My religion consists of a humble admiration of the illimitable superior spirit who reveals himself in the slight details we are able to perceive with our frail and feeble mind."</item>
+     <item>"Yes, we have to divide up our time like that, between our politics and our equations. But to me our equations are far more important, for politics are only a matter of present concern. A mathematical equation stands forever."</item>
+     <item>"The release of atom power has changed everything except our way of thinking...the solution to this problem lies in the heart of mankind. If only I had known, I should have become a watchmaker."</item>
+     <item>"Great spirits have always found violent opposition from mediocrities. The latter cannot understand it when a man does not thoughtlessly submit to hereditary prejudices but honestly and courageously uses his intelligence."</item>
+     <item>"The most beautiful thing we can experience is the mysterious. It is the source of all true art and all science. He to whom this emotion is a stranger, who can no longer pause to wonder and stand rapt in awe, is as good as dead: his eyes are closed."</item>
+     <item>"A man's ethical behavior should be based effectually on sympathy, education, and social ties; no religious basis is necessary. Man would indeeded be in a poor way if he had to be restrained by fear of punishment and hope of reward after death."</item>
+     <item>"The further the spiritual evolution of mankind advances, the more certain it seems to me that the path to genuine religiosity does not lie through the fear of life, and the fear of death, and blind faith, but through striving after rational knowledge."</item>
+     <item>"Now he has departed from this strange world a little ahead of me. That means nothing. People like us, who believe in physics, know that the distinction between past, present, and future is only a stubbornly persistent illusion."</item>
+     <item>"You see, wire telegraph is a kind of a very, very long cat. You pull his tail in New York and his head is meowing in Los Angeles. Do you understand this? And radio operates exactly the same way: you send signals here, they receive them there. The only difference is that there is no cat."</item>
+     <item>"One had to cram all this stuff into one's mind for the examinations, whether one liked it or not. This coercion had such a deterring effect on me that, after I had passed the final examination, I found the consideration of any scientific problems distasteful to me for an entire year."</item>
+     <item>"...one of the strongest motives that lead men to art and science is escape from everyday life with its painful crudity and hopeless dreariness, from the fetters of one's own ever-shifting desires. A finely tempered nature longs to escape from the personal life into the world of objective perception and thought."</item>
+     <item>"He who joyfully marches to music rank and file, has already earned my contempt. He has been given a large brain by mistake, since for him the spinal cord would surely suffice. This disgrace to civilization should be done away with at once. Heroism at command, how violently I hate all this, how despicable and ignoble war is; I would rather be torn to shreds than be a part of so base an action. It is my conviction that killing under the cloak of war is nothing but an act of murder."</item>
+     <item>"A human being is a part of a whole, called by us _universe_, a part limited in time and space. He experiences himself, his thoughts and feelings as something separated from the rest... a kind of optical delusion of his consciousness. This delusion is a kind of prison for us, restricting us to our personal desires and to affection for a few persons nearest to us. Our task must be to free ourselves from this prison by widening our circle of compassion to embrace all living creatures and the whole of nature in its beauty."</item>
+     <item>"Not everything that counts can be counted, and not everything that can be counted counts." (Sign hanging in Einstein\'s office at Princeton)</item> 
+</string-array>
+<string name="MapMain_label">Maps App</string>
+<string name="Twitter_label">Twitter | Milan Gokhale (milang) </string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_height="fill_parent" 
+android:layout_width="wrap_content" 
+android:orientation="horizontal"
+>
+
+<TextView
+android:id="@+id/TextView03" 
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textSize="12px"
+android:text="You should park at:"
+>
+</TextView>
+
+<TextView
+android:id="@+id/Parking" 
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textSize="12px"
+android:text="222 Richmond Street West"
+>
+</TextView>
+
+</LinearLayout>

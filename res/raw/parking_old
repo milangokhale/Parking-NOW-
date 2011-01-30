@@ -1,0 +1,17 @@
+<parkinglocation>
+<address>37 Queen Street East</address>
+<latitude>43.65311</latitude>
+<longitude>-79.37702</longitude>
+<numofspaces>645</numofspaces>
+<parkingtype>garage</parkingtype>
+<carparknum>26</carparknum>
+</parkinglocation>
+<parkinglocation>
+<address>87 Richmond Street East</address>
+<latitude>43.65299</latitude>
+<longitude>-79.37423</longitude>
+<numofspaces>20</numofspaces>
+<parkingtype>surface</parkingtype>
+<carparknum>219</carparknum>
+</parkinglocation>
+</resources>

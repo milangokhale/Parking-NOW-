@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<parkinglocation address="25 Dundas Street East" latitude="43.65647" longitude="-79.37951" numofspaces="265" parkingtype="garage" id="34"></parkinglocation>
+<parkinglocation address="37 Queen Street East" latitude="43.65311" longitude="-79.37702" numofspaces="645" parkingtype="garage" id="26"></parkinglocation>
+<parkinglocation address="87 Richmond Street East" latitude="43.65299" longitude="-79.37423" numofspaces="20" parkingtype="surface" id="219"></parkinglocation>
+<parkinglocation address="110 Queen Street West" latitude="43.65178" longitude="-79.38331" numofspaces="2087" parkingtype="garage" id="36"></parkinglocation>
+<parkinglocation address="323 Richmond Street East" latitude="43.65358" longitude="-79.36897" numofspaces="258" parkingtype="garage" id="125"></parkinglocation>
+<parkinglocation address="15 Wellesley Street East" latitude="43.665088" longitude="-79.384206" numofspaces="135" parkingtype="surface" id="5"></parkinglocation>
+</resources>
