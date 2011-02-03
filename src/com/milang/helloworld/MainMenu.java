@@ -35,4 +35,11 @@ public class MainMenu extends Activity {
 		intent.setComponent(new ComponentName(this, Parking.class));
 		startActivity(intent);		
 	}
+	
+	public void ProgressBarBtn_Click(View view)
+	{
+		Intent intent = new Intent();
+		intent.setComponent(new ComponentName(this, ProgressBarMain.class));
+		startActivity(intent);		
+	}
 }

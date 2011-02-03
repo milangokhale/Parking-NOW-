@@ -33,6 +33,7 @@ public final class R {
         public static final int TextView12345=0x7f080000;
         public static final int mainlayout=0x7f080005;
         public static final int mapview=0x7f080006;
+        public static final int progressbar_default=0x7f08000e;
         public static final int widget30=0x7f080007;
         public static final int widget65=0x7f080008;
     }
@@ -42,6 +43,7 @@ public final class R {
         public static final int main=0x7f030002;
         public static final int mainmenu=0x7f030003;
         public static final int parking=0x7f030004;
+        public static final int progressbar=0x7f030005;
     }
     public static final class raw {
         public static final int milang_json=0x7f050000;

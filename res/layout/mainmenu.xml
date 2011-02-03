@@ -38,4 +38,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
 <ImageView android:layout_height="wrap_content" android:src="@drawable/settings" android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_x="45dip" android:layout_y="285dip" android:onClick="ParkingBtn_Click"></ImageView>
 <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TextView03" android:textStyle="bold" android:layout_x="120dip" android:layout_y="297dip" android:text="Parking App"></TextView>
+
+<ImageView android:layout_height="wrap_content" android:src="@drawable/settings" android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_x="65dip" android:layout_y="349dip" android:onClick="ProgressBarBtn_Click"></ImageView>
+<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TextView03" android:textStyle="bold" android:layout_x="120dip" android:layout_y="397dip" android:text="Progress Bar"></TextView>
+
 </AbsoluteLayout>

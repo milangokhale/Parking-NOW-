@@ -3,8 +3,6 @@ package com.milang.helloworld;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -17,16 +15,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
-
-
 
 public class Parking extends Activity 
 {	
@@ -36,15 +30,14 @@ public class Parking extends Activity
     MapController myMapController;
     MapView myMapView;
     
-    LocationListener locationListener;
-    
     TextView textView;
     
     ArrayList<GeoPoint> myGeoPointArray = new ArrayList<GeoPoint>();
     ArrayList<String> myAddressArray = new ArrayList<String>();
     
     LocationManager locationManager;
-    
+
+    LocationListener locationListener;
     GeoPoint myCurrentLocation;
 	
 	@Override
@@ -53,7 +46,6 @@ public class Parking extends Activity
         setContentView(R.layout.parking);       
         
         textView = (TextView) findViewById(R.id.Parking);
-        	
         
         // For each GeoPoint, calculate the distance between them and add to an array
         // for (int i=0; i< length of file, i++) 
@@ -63,8 +55,8 @@ public class Parking extends Activity
 	        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 	        
 	       // Coordinates for Ritika's place
-	        Double lat = 43.65419*1E6;
-	        Double lng = -79.37595*1E6;  
+	        //Double lat = 43.65419*1E6;
+	        //Double lng = -79.37595*1E6;  
 	        
 	        // Create a new GeoPoint object and add it to the OverlayItem object
 	        //myCurrentLocation = new GeoPoint(lat.intValue(),lng.intValue());        
@@ -144,10 +136,6 @@ public class Parking extends Activity
 		}
     }
 	
-	private void UpdateTextView() {
-		
-	}
-	
 	private void FillGeoPointsFromXml() throws IOException, XmlPullParserException {
 		
 		 Resources res = this.getResources();
@@ -194,79 +182,6 @@ public class Parking extends Activity
 		Double y = Double.parseDouble(lon);
 		
 		return(new GeoPoint((int)(x*MILLION),(int)(y*MILLION)));
-	}
-	
-
-		private String getEventsFromAnXML(Activity activity) throws XmlPullParserException, IOException
-		{
-			
-		 StringBuffer stringBuffer = new StringBuffer();
-		 Resources res = activity.getResources();
-		 XmlResourceParser parser = res.getXml(R.xml.parkinglocations);
-		 
-		 while (parser.next() != XmlPullParser.END_DOCUMENT)
-		 {
-			 String tagName = parser.getName();
-			 String address = null;
-			 String latitude = null;
-			 String longitude = null;
-			 
-			 if ((tagName!=null) && tagName.equals("parkinglocation")) {
-				 int size = parser.getAttributeCount();
-				 for (int i=0; i < size; i++) {
-					 String attrName = parser.getAttributeName(i);
-					 String attrValue = parser.getAttributeValue(i);
-					 
-					 if ((attrName!=null) && attrName.equals("address")) {
-						 address = attrValue;
-					 }
-					 
-					 else if ((attrName != null) && attrName.equals("latitude")) {
-						 latitude = attrValue;					 
-					 }
-					 
-					 else if ((attrName != null) && attrName.equals("longitude")) {
-						 longitude = attrValue;					 
-					 }
-				 }
-				 
-				 if(address != null){
-					 stringBuffer.append("Address: " + address + "\n");
-					 stringBuffer.append("Latitude: " + latitude + "\n");
-					 stringBuffer.append("Longitude: " + longitude + "\n");
-				 }
-			 }
-		 }
-		 
-		 return stringBuffer.toString();
-		}
-	
-	private String GetAddress(GeoPoint gp){
-
-		String add = "";
-		
-    	Geocoder geoCoder = new Geocoder(
-                getBaseContext(), Locale.getDefault());
-            try {
-                List<Address> addresses = geoCoder.getFromLocation(
-                    gp.getLatitudeE6()  / 1E6, 
-                    gp.getLongitudeE6() / 1E6, 1);
-
-                
-                if (addresses.size() > 0) 
-                {
-                    for (int i=0; i<addresses.get(0).getMaxAddressLineIndex(); 
-                         i++)
-                       add += addresses.get(0).getAddressLine(i) + "\n";
-                }
-
-                //Toast.makeText(getBaseContext(), add, Toast.LENGTH_SHORT).show();
-            }
-            catch (IOException e) {                
-                e.printStackTrace();
-            }   
-
-        return add;
 	}
 	
 	private double roundTwoDecimals(double d) 

@@ -6,4 +6,7 @@
 <parkinglocation address="110 Queen Street West" latitude="43.65178" longitude="-79.38331" numofspaces="2087" parkingtype="garage" id="36"></parkinglocation>
 <parkinglocation address="323 Richmond Street East" latitude="43.65358" longitude="-79.36897" numofspaces="258" parkingtype="garage" id="125"></parkinglocation>
 <parkinglocation address="15 Wellesley Street East" latitude="43.665088" longitude="-79.384206" numofspaces="135" parkingtype="surface" id="5"></parkinglocation>
+<parkinglocation address="6 Sherwood Avenue" latitude="43.74061" longitude="-79.30252" numofspaces="46" parkingtype="surface" id="139"></parkinglocation>
 </resources>
+
+
