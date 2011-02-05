@@ -36,10 +36,6 @@
                   android:label="Parking App">            
         </activity>  
     
-    <activity android:name=".ProgressBarMain"
-                  android:label="Progress Bar App">            
-        </activity>  
-    
     </application>
 
 

@@ -4,9 +4,35 @@
 <parkinglocation address="37 Queen Street East" latitude="43.65311" longitude="-79.37702" numofspaces="645" parkingtype="garage" id="26"></parkinglocation>
 <parkinglocation address="87 Richmond Street East" latitude="43.65299" longitude="-79.37423" numofspaces="20" parkingtype="surface" id="219"></parkinglocation>
 <parkinglocation address="110 Queen Street West" latitude="43.65178" longitude="-79.38331" numofspaces="2087" parkingtype="garage" id="36"></parkinglocation>
+<parkinglocation address="6 Sherwood Avenue" latitude="43.74061" longitude="-79.30252" numofspaces="46" parkingtype="surface" id="139"></parkinglocation>
 <parkinglocation address="323 Richmond Street East" latitude="43.65358" longitude="-79.36897" numofspaces="258" parkingtype="garage" id="125"></parkinglocation>
 <parkinglocation address="15 Wellesley Street East" latitude="43.665088" longitude="-79.384206" numofspaces="135" parkingtype="surface" id="5"></parkinglocation>
-<parkinglocation address="6 Sherwood Avenue" latitude="43.74061" longitude="-79.30252" numofspaces="46" parkingtype="surface" id="139"></parkinglocation>
+<parkinglocation address="10 York Street" latitude="43.64155" longitude="-79.38075" numofspaces="40" parkingtype="surface" id="177"></parkinglocation>
+<parkinglocation address="2 Church Street" latitude="43.64725" longitude="-79.37311" numofspaces="2008" parkingtype="surface" id="43"></parkinglocation>
+<parkinglocation address="1A Church Street" latitude="43.64697" longitude="-79.37296" numofspaces="34" parkingtype="surface" id="108"></parkinglocation>
+<parkinglocation address="110 Queen Street West" latitude="43.65182" longitude="-79.38333" numofspaces="2087" parkingtype="garage" id="36"></parkinglocation>
+<parkinglocation address="40 Larch Street" latitude="43.65305" longitude="-79.39767" numofspaces="357" parkingtype="garage" id="150"></parkinglocation>
+<parkinglocation address="521 Dundas Street West" latitude="43.65307" longitude="-79.39860" numofspaces="129" parkingtype="garage" id="163"></parkinglocation>
+<parkinglocation address="Toronto Coach TTC Terminal Lot" latitude="43.55502" longitude="-79.38620" numofspaces="24" parkingtype="surface" id="828"></parkinglocation>
+<parkinglocation address="13 Isabella Street" latitude="43.66800" longitude="-79.38742" numofspaces="33" parkingtype="surface" id="3"></parkinglocation>
+<parkinglocation address="20 Charles Street" latitude="43.66932" longitude="-79.38496" numofspaces="430" parkingtype="garage" id="1"></parkinglocation>
+<parkinglocation address="37 Yorkville Avenue" latitude="43.67173" longitude="-79.38951" numofspaces="1036" parkingtype="garage" id="15"></parkinglocation>
+<parkinglocation address="74 Yorkville Avenue" latitude="43.67157" longitude="-79.39112" numofspaces="172" parkingtype="garage" id="215"></parkinglocation>
+<parkinglocation address="1119 Queen Street West" latitude="43.64341" longitude="-79.42427" numofspaces="29" parkingtype="surface" id="62"></parkinglocation>
+<parkinglocation address="110 Dovercourt Road" latitude="43.64372" longitude="-79.42223" numofspaces="8" parkingtype="surface" id="229"></parkinglocation>
+<parkinglocation address="803 Richmond Street West" latitude="43.64500" longitude="-79.41073" numofspaces="49" parkingtype="surface" id="53"></parkinglocation>
+<parkinglocation address="20 St. Andrew Street" latitude="43.65448" longitude="-79.39966" numofspaces="450" parkingtype="garage" id="68"></parkinglocation>
+<parkinglocation address="1155 King Street West" latitude="43.63998" longitude="-79.42335" numofspaces="329" parkingtype="surface" id="181"></parkinglocation>
+<parkinglocation address="34 Hanna Avenue" latitude="43.63894" longitude="-79.49144" numofspaces="184" parkingtype="surface" id="224"></parkinglocation>
+<parkinglocation address="1325 Queen Street West" latitude="43.64148" longitude="-79.43349" numofspaces="32" parkingtype="surface" id="158"></parkinglocation>
+<parkinglocation address="250 Manning Avenue" latitude="43.65266" longitude="-79.41141" numofspaces="43" parkingtype="surface" id="251"></parkinglocation>
+<parkinglocation address="205 McCaul Street" latitude="43.65682" longitude="-79.39227" numofspaces="38" parkingtype="surface" id="216"></parkinglocation>
+<parkinglocation address="15 Denison Avenue" latitude="43.64886" longitude="-79.40075" numofspaces="120" parkingtype="surface" id="106"></parkinglocation>
+<parkinglocation address="10 Portland Street" latitude="43.64207" longitude="-79.39895" numofspaces="37" parkingtype="garage" id="96"></parkinglocation>
+<parkinglocation address="105 Spadina Avenue" latitude="43.64670" longitude="-79.39513" numofspaces="18" parkingtype="surface" id="227"></parkinglocation>
+<parkinglocation address="363 Adelaide Street West" latitude="43.64703" longitude="-79.39509" numofspaces="23" parkingtype="surface" id="212"></parkinglocation>
+<parkinglocation address="18 Ossington Avenue" latitude="43.64495" longitude="-79.41893" numofspaces="20" parkingtype="surface" id="167"></parkinglocation>
 </resources>
+
 
 

@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_height="fill_parent" 
-android:layout_width="wrap_content" 
-android:orientation="horizontal"
+<AbsoluteLayout
+android:id="@+id/widget0"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
 >
-
 <TextView
-android:id="@+id/TextView03" 
+android:id="@+id/TextViewParkingAddress"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:textSize="12px"
-android:text="You should park at:"
+android:textSize="18sp"
+android:layout_x="50px"
+android:layout_y="85px"
 >
 </TextView>
-
 <TextView
-android:id="@+id/Parking" 
+android:id="@+id/widget30"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:textSize="12px"
-android:text="222 Richmond Street West"
+android:text="Nearest Green P Parking Lot:"
+android:layout_x="50px"
+android:layout_y="61px"
 >
 </TextView>
+<TextView
+android:id="@+id/widget31"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Distance:"
+android:layout_x="52px"
+android:layout_y="158px"
+>
+</TextView>
+<TextView
+android:id="@+id/TextViewDistance"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textSize="18sp"
+android:layout_x="54px"
+android:layout_y="181px"
+>
+</TextView>
+</AbsoluteLayout>
 
-</LinearLayout>
