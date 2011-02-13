@@ -35,4 +35,11 @@ public class MainMenu extends Activity {
 		intent.setComponent(new ComponentName(this, Parking.class));
 		startActivity(intent);		
 	}	
+	
+	public void Parking2Btn_Click(View view)
+	{
+		Intent intent = new Intent();
+		intent.setComponent(new ComponentName(this, Parking2.class));
+		startActivity(intent);		
+	}	
 }

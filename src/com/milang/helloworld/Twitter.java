@@ -65,5 +65,4 @@ public class Twitter extends ListActivity {
             tvData.setText("Error w/file: " + je.getMessage());
         }
     }
-	
 }

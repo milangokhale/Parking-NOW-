@@ -32,7 +32,20 @@
 <parkinglocation address="105 Spadina Avenue" latitude="43.64670" longitude="-79.39513" numofspaces="18" parkingtype="surface" id="227"></parkinglocation>
 <parkinglocation address="363 Adelaide Street West" latitude="43.64703" longitude="-79.39509" numofspaces="23" parkingtype="surface" id="212"></parkinglocation>
 <parkinglocation address="18 Ossington Avenue" latitude="43.64495" longitude="-79.41893" numofspaces="20" parkingtype="surface" id="167"></parkinglocation>
+<parkinglocation address="284 Milner Avenue" latitude="43.789215" longitude="-79.238795" numofspaces="98" parkingtype="surface" id="706"></parkinglocation>
+<parkinglocation address="777 Victoria Park Avenue" latitude="43.69401" longitude="-79.28921" numofspaces="180" parkingtype="surface" id="824"></parkinglocation>
+<parkinglocation address="100 Bishop Avenue" latitude="43.67413" longitude="-79.39339" numofspaces="1683" parkingtype="surface" id="814"></parkinglocation>
+<parkinglocation address="5714 Yonge Street" latitude="43.78190" longitude="-79.41601" numofspaces="1531" parkingtype="surface" id="813"></parkinglocation>
+<parkinglocation address="5667 Yonge Street" latitude="43.78188" longitude="-79.41579" numofspaces="23" parkingtype="surface" id="419"></parkinglocation>
+<parkinglocation address="11 Finch West" latitude="43.78004" longitude="-79.41588" numofspaces="62" parkingtype="surface" id="412"></parkinglocation>
 </resources>
+
+
+
+
+
+
+
 
 
 

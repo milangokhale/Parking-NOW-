@@ -12,13 +12,14 @@ android:layout_height="wrap_content"
 android:textSize="18sp"
 android:layout_x="50px"
 android:layout_y="85px"
+android:textStyle="bold"
 >
 </TextView>
 <TextView
 android:id="@+id/widget30"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:text="Nearest Green P Parking Lot:"
+android:text="Nearest Green P parking lot:"
 android:layout_x="50px"
 android:layout_y="61px"
 >
@@ -27,7 +28,7 @@ android:layout_y="61px"
 android:id="@+id/widget31"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:text="Distance:"
+android:text="Distance from current location:"
 android:layout_x="52px"
 android:layout_y="158px"
 >
@@ -39,6 +40,7 @@ android:layout_height="wrap_content"
 android:textSize="18sp"
 android:layout_x="54px"
 android:layout_y="181px"
+android:textStyle="bold"
 >
 </TextView>
 </AbsoluteLayout>

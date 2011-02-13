@@ -27,7 +27,7 @@ import com.milang.location.LocationUtil;
 import com.milang.util.NumberFormat;
 
 
-public class Parking extends Activity 
+public class Parking2 extends Activity 
 {	
     
     TextView textViewParkingAddress;
@@ -163,7 +163,7 @@ public class Parking extends Activity
 	    
 	public class GetLocationTask extends AsyncTask<Void, Integer, Void> {
 		
-		private final ProgressDialog dialog = new ProgressDialog(Parking.this);
+		private final ProgressDialog dialog = new ProgressDialog(Parking2.this);
 
         protected void onPreExecute()
         {

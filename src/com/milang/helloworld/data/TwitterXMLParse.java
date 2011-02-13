@@ -96,6 +96,4 @@ Attributes atts) throws SAXException {
             this.sb.append(theString);
         }
     }
-
 }
-

@@ -1,8 +1,8 @@
 package com.milang.helloworld;
 
-import java.io.IOException;
+//import java.io.IOException;
 import java.util.List;
-import java.util.Locale;
+//import java.util.Locale;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
@@ -14,8 +14,8 @@ import com.google.android.maps.OverlayItem;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.location.Address;
-import android.location.Geocoder;
+//import android.location.Address;
+//import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -162,8 +162,6 @@ public class MapMain extends MapActivity {
         *///	
     }
     
-    
-    
     private GeoPoint getPoint(double lat, double lon) {
 		return(new GeoPoint((int)(lat*1000000.0),(int)(lon*1000000.0)));
 	}
@@ -186,6 +184,4 @@ public class MapMain extends MapActivity {
 		
 		me.enableCompass();
 	}
-	
-	
 }
