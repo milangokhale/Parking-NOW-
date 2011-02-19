@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+android:id="@+id/widget0"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<TextView
+android:id="@+id/TextViewParkingAddress"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textSize="18sp"
+android:layout_x="50px"
+android:layout_y="85px"
+android:textStyle="bold"
+>
+</TextView>
+<TextView
+android:id="@+id/widget30"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Nearest Green P parking lot:"
+android:layout_x="50px"
+android:layout_y="61px"
+>
+</TextView>
+<TextView
+android:id="@+id/widget31"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Distance from current location:"
+android:layout_x="52px"
+android:layout_y="158px"
+>
+</TextView>
+<TextView
+android:id="@+id/TextViewDistance"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textSize="18sp"
+android:layout_x="54px"
+android:layout_y="181px"
+android:textStyle="bold"
+>
+</TextView>
+</AbsoluteLayout>
+
