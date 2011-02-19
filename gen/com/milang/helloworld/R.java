@@ -14,38 +14,53 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int icon=0x7f020000;
-        public static final int maps=0x7f020001;
-        public static final int marker_red=0x7f020002;
-        public static final int searchicon=0x7f020003;
-        public static final int settings=0x7f020004;
-        public static final int twitter_logo=0x7f020005;
+        public static final int ic_menu_mapmode=0x7f020000;
+        public static final int ic_menu_preferences=0x7f020001;
+        public static final int icon=0x7f020002;
+        public static final int maps=0x7f020003;
+        public static final int marker_red=0x7f020004;
+        public static final int searchicon=0x7f020005;
+        public static final int settings=0x7f020006;
+        public static final int twitter_logo=0x7f020007;
     }
     public static final class id {
-        public static final int AutoCompleteTextView01=0x7f080003;
-        public static final int AutoCompleteTextView02=0x7f080002;
-        public static final int Button1=0x7f080004;
-        public static final int ImageView01=0x7f08000b;
-        public static final int Settings=0x7f080009;
-        public static final int TextView01=0x7f080001;
-        public static final int TextView02=0x7f08000a;
-        public static final int TextView03=0x7f08000c;
-        public static final int TextView12345=0x7f080000;
-        public static final int TextViewDistance=0x7f080010;
-        public static final int TextViewParkingAddress=0x7f08000e;
-        public static final int mainlayout=0x7f080005;
-        public static final int mapview=0x7f080006;
-        public static final int widget0=0x7f08000d;
-        public static final int widget30=0x7f080007;
-        public static final int widget31=0x7f08000f;
-        public static final int widget65=0x7f080008;
+        public static final int AutoCompleteTextView01=0x7f090005;
+        public static final int AutoCompleteTextView02=0x7f090004;
+        public static final int Button1=0x7f090006;
+        public static final int ImageView01=0x7f09000d;
+        public static final int LinearLayout01=0x7f09000f;
+        public static final int ListView01=0x7f090002;
+        public static final int ListView_Parking=0x7f090010;
+        public static final int Settings=0x7f09000b;
+        public static final int TextView01=0x7f090003;
+        public static final int TextView02=0x7f09000c;
+        public static final int TextView03=0x7f09000e;
+        public static final int TextView12345=0x7f090015;
+        public static final int TextViewDistance=0x7f090014;
+        public static final int TextViewParkingAddress=0x7f090012;
+        public static final int cityState=0x7f090001;
+        public static final int mainlayout=0x7f090007;
+        public static final int maps=0x7f090016;
+        public static final int mapview=0x7f090008;
+        public static final int name=0x7f090000;
+        public static final int settings=0x7f090017;
+        public static final int widget0=0x7f090011;
+        public static final int widget30=0x7f090009;
+        public static final int widget31=0x7f090013;
+        public static final int widget65=0x7f09000a;
     }
     public static final class layout {
-        public static final int list=0x7f030000;
-        public static final int logon=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int mainmenu=0x7f030003;
-        public static final int parking=0x7f030004;
+        public static final int custom_row_view=0x7f030000;
+        public static final int listview=0x7f030001;
+        public static final int logon=0x7f030002;
+        public static final int main=0x7f030003;
+        public static final int mainmenu=0x7f030004;
+        public static final int parking=0x7f030005;
+        public static final int parking2=0x7f030006;
+        public static final int twitter=0x7f030007;
+    }
+    public static final class menu {
+        public static final int parkingmenu=0x7f080000;
     }
     public static final class raw {
         public static final int featureslist=0x7f050000;
@@ -53,10 +68,13 @@ public final class R {
         public static final int parking_old=0x7f050002;
     }
     public static final class string {
-        public static final int MapMain_label=0x7f060002;
-        public static final int Twitter_label=0x7f060003;
+        public static final int MapMain_label=0x7f060005;
+        public static final int Twitter_label=0x7f060006;
         public static final int app_name=0x7f060001;
         public static final int hello=0x7f060000;
+        public static final int menu_maps=0x7f060004;
+        public static final int menu_preferences=0x7f060003;
+        public static final int msg_finding_location=0x7f060002;
     }
     public static final class xml {
         public static final int parkinglocations=0x7f040000;

@@ -1,28 +1,67 @@
 package com.milang.helloworld;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.app.Activity;
 import android.app.ListActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class Twitter extends ListActivity {
+public class Twitter extends Activity {
 	
 	TextView tvData;
 		
-	@Override
-	   public void onCreate(Bundle savedInstanceState) {
-	       super.onCreate(savedInstanceState);
-	       setContentView(R.layout.list);     
-	       
-	       tvData = (TextView)findViewById(R.id.TextView12345);
-	       
-	       examineJSONFile();
-    }
+   @Override
+   public void onCreate(Bundle savedInstanceState) {
+       super.onCreate(savedInstanceState);
+       setContentView(R.layout.twitter); 
+       
+       tvData = (TextView)findViewById(R.id.TextView12345);
+       
+       SearchResults sr1 = new SearchResults("25 Dundas", 122.0);
+       SearchResults sr2 = new SearchResults("34 Queen St", 45.0);
+       SearchResults sr3 = new SearchResults("82 Darnborough", 1111.0);
+       
+       ArrayList<SearchResults> array_sr = new ArrayList<SearchResults>();
+       
+       array_sr.add(sr1);
+       array_sr.add(sr2);
+       array_sr.add(sr3);
+       
+       Collections.sort(array_sr, new Comparator<Object>(){
+    	   
+           public int compare(Object o1, Object o2) {
+        	   SearchResults p1 = (SearchResults) o1;
+        	   SearchResults p2 = (SearchResults) o2;
+        	   
+        	   return p1.getCalcDistance().compareTo(p2.getCalcDistance());
+              //return p1.getFirstName().compareToIgnoreCase(p2.getFirstName());
+           }
+       });
+       
+       String x = "";
+       for (int i=0; i < array_sr.size(); i++) {
+    	   x+=array_sr.get(i).getAddress() + " " + array_sr.get(i).getCalcDistance() + "km" + "\n";
+       }
+       
+       tvData.setText(x);
+    
+       //examineJSONFile();
+       
+       
+	}
 	
 	 // Takes a JSON class
 	protected void examineJSONFile()
@@ -58,11 +97,11 @@ public class Twitter extends ListActivity {
             }
             
             // set TextView element with string
-            tvData.setText(x);
+            //tvData.setText(x);
         }
-        catch (Exception je)
+        catch (Exception ex)
         {
-            tvData.setText("Error w/file: " + je.getMessage());
+            //tvData.setText("Error w/file: " + ex.getMessage());
         }
     }
 }

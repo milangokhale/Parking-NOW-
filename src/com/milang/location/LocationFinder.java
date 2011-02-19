@@ -31,25 +31,11 @@ public class LocationFinder {
 		this.isLocationFound = isLocationFound;
 	}
 
-	private final static long minTime = 60000;
-    private final static float minDistance = 1000f;
+	private final static long minTime = 60000; //10 mins
+    private final static float minDistance = 1000f; 
     
     private LocationManager locationManager;    
     private LocationResult locationResult;
-    
-    /**
-	 * @return the locationResult
-	 */
-	public LocationResult getLocationResult() {
-		return locationResult;
-	}
-
-	/**
-	 * @param locationResult the locationResult to set
-	 */
-	public void setLocationResult(LocationResult locationResult) {
-		this.locationResult = locationResult;
-	}
 
 	boolean isGpsEnabled = false;
     boolean isNetworkEnabled = false;    
@@ -117,11 +103,11 @@ public class LocationFinder {
         if (isNetworkEnabled) {locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 
         		minTime, minDistance, locationListenerNetwork);}
 
-        GetLastLocation();
+        //GetLastLocation();
         return true;
     }
 	
-    private void GetLastLocation()
+    public final void GetLastLocation()
     {
         locationManager.removeUpdates(locationListenerGps);
         locationManager.removeUpdates(locationListenerNetwork);
