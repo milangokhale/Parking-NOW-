@@ -3,8 +3,8 @@
 <string name="hello">Hello World, Main!</string>
 <string name="app_name">Hello World</string>
 <string name="msg_finding_location">Finding current location...</string>
-<string name="menu_preferences">Preferences</string>
-<string name="menu_maps">Map Mode</string>
+<string name="menu_preferences">Settings</string>
+<string name="menu_maps">Map</string>
 <string-array name="quotes">
      <item>"Any intelligent fool can make things bigger, more complex, and more violent. It takes a touch of genius -- and a lot of courage -- to move in the opposite direction."</item>
      <item>"Imagination is more important than knowledge."</item>

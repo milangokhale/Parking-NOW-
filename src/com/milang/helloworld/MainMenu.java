@@ -22,13 +22,6 @@ public class MainMenu extends Activity {
 		startActivity(intent);
 	}
 	
-	public void TwitterBtn_Click(View view)
-	{
-		Intent intent = new Intent();
-		intent.setComponent(new ComponentName(this, Twitter.class));
-		startActivity(intent);		
-	}
-	
 	public void ParkingBtn_Click(View view)
 	{
 		Intent intent = new Intent();
