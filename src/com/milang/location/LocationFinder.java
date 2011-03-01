@@ -17,6 +17,16 @@ import android.os.Bundle;
  */
 public class LocationFinder {
 	
+	private final static long MIN_TIME = 60000; //10 minutes
+    private final static float MIN_DISTANCE = 1000f; 
+    
+    private LocationManager locationManager;
+    private LocationResult locationResult;
+
+	boolean isGpsEnabled = false;
+    boolean isNetworkEnabled = false;    
+    boolean isLocationFound = false;
+    
     /**
 	 * @return the isLocationFound
 	 */
@@ -30,16 +40,6 @@ public class LocationFinder {
 	public void setLocationFound(boolean isLocationFound) {
 		this.isLocationFound = isLocationFound;
 	}
-
-	private final static long minTime = 60000; //10 mins
-    private final static float minDistance = 1000f; 
-    
-    private LocationManager locationManager;    
-    private LocationResult locationResult;
-
-	boolean isGpsEnabled = false;
-    boolean isNetworkEnabled = false;    
-    boolean isLocationFound = false;
 	
 	/**
 	 * Implements LocationListener for GPS
@@ -98,19 +98,19 @@ public class LocationFinder {
         if (!isGpsEnabled && !isNetworkEnabled){ return false; }
         
         if (isGpsEnabled) {locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 
-        		minTime, minDistance, locationListenerGps);}
+        		MIN_TIME, MIN_DISTANCE, locationListenerGps);}
         
         if (isNetworkEnabled) {locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 
-        		minTime, minDistance, locationListenerNetwork);}
+        		MIN_TIME, MIN_DISTANCE, locationListenerNetwork);}
 
-        //GetLastLocation();
+        getLastKnownLocation();
         return true;
     }
 	
-    public final void GetLastLocation()
+    public final void getLastKnownLocation()
     {
-        locationManager.removeUpdates(locationListenerGps);
-        locationManager.removeUpdates(locationListenerNetwork);
+        //locationManager.removeUpdates(locationListenerGps);
+        //locationManager.removeUpdates(locationListenerNetwork);
 
         Location gpsLocation = null;
         Location networkLocation = null;

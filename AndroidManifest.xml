@@ -12,10 +12,6 @@
         
         <activity android:name=".MainMenu"
                   android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <uses-library android:name="com.google.android.maps" />
@@ -25,7 +21,7 @@
         </activity>
         
         <activity android:name=".MapMain"
-                  android:label="@string/MapMain_label">            
+                  android:label="@string/MapMain_label" android:theme="@android:style/Theme.NoTitleBar">            
         </activity>
         
         <activity android:name=".Twitter"
@@ -33,10 +29,14 @@
         </activity>    
 
 		<activity android:name=".Parking"
-                  android:label="Parking App">            
+                  android:label="Parking App">
+                  
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>   
     
     </application>
-
 
 </manifest> 

@@ -47,6 +47,18 @@ public class LocationUtil
 	}
 	
     /**
+	 * Get GeoPoint from latitude/longitude pair of floats. 
+	 * 
+	 * @param lat Latitude of point.
+	 * @param lon Longitude of point.
+	 * @return A GeoPoint with given latitude and longitude coordinates.
+	 */
+	public static GeoPoint getGeoPointFromFloats(float lat, float lon) {
+
+		return(new GeoPoint((int)(lat*MILLION),(int)(lat*MILLION)));
+	}
+	
+    /**
 	 * Get GeoPoint from a Location object.
 	 * 
 	 * @param location A Location object to be parsed. 
@@ -99,5 +111,33 @@ public class LocationUtil
 	    double lon2 = p2.getLongitudeE6() / (double)MILLION;
 	
 	    return calcDistanceInKm(lat1, lon1, lat2, lon2);
+	}
+	
+	 /**
+	 * Computes the distance in kilometers between two points on Earth.
+	 * 
+	 * @param lat Latitude of the first point
+	 * @param lon Longitude of the first point
+	 * @param p2 Second point
+	 * @return Distance between the two points in kilometers.
+	 */
+	public static double calcDistanceInKm(String lat, String lon, GeoPoint p2) {
+
+		GeoPoint p1 = LocationUtil.getGeoPointFromStrings(lat, lon);
+		return calcDistanceInKm(p1, p2);
+	}
+	
+	 /**
+	 * Computes the distance in kilometers between two points on Earth.
+	 * 
+	 * @param lat Latitude of the first point
+	 * @param lon Longitude of the first point
+	 * @param p2 Second point
+	 * @return Distance between the two points in kilometers.
+	 */
+	public static double calcDistanceInKm(float lat, float lon, GeoPoint p2) {
+
+		GeoPoint p1 = LocationUtil.getGeoPointFromFloats(lat, lon);
+		return calcDistanceInKm(p1, p2);
 	}
 }

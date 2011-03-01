@@ -8,9 +8,8 @@
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 	android:gravity="left" />
-  <TextView android:id="@+id/name"
-  android:text="Street Address"
-  android:textSize="14sp"
+  <TextView android:id="@+id/carpark_street_address"
+  android:textSize="18sp"
   android:textStyle="bold"
   android:textColor="#FFFF00"
   android:layout_width="wrap_content"
@@ -20,10 +19,13 @@
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 	android:gravity="right" />
- <TextView android:id="@+id/cityState"
-   android:textSize="12sp"
-     android:textStyle="bold"
+   <TextView android:id="@+id/carpark_rate"
+   android:textSize="14sp"
   android:text="Distance (km)"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"/>
+   <TextView android:id="@+id/carpark_capacity"
+   android:textSize="14sp"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linearlayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="#81BEF7" android:scrollbars="vertical">
+
+ <linearlayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/buttonlayout" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:height="32dp" android:gravity="left|top" android:background="#2B60DE" android:paddingTop="2dp" android:paddingBottom="2dp">
+
+		    <linearlayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/buttonlayout2" android:orientation="horizontal" android:layout_height="wrap_content" android:gravity="left|center_vertical" android:layout_gravity="left" android:layout_width="wrap_content">
+	    		<imagebutton android:id="@+id/imgbtn1" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/marker_red"></imagebutton>
+	    		<textview android:id="@+id/txtTest" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textStyle="bold" android:text="SimpleActionBar App" android:textColor="#FFFFFF" android:textSize="15sp" android:gravity="center_vertical" android:paddingLeft="5dp">
+
+	    	</textview>
+		    <linearlayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/buttonlayout2" android:orientation="horizontal" android:layout_height="wrap_content" android:gravity="right" android:layout_gravity="right" android:layout_width="fill_parent">
+	    		<imagebutton android:id="@+id/imgbtn2" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/marker_red"></imagebutton>
+	    		<imagebutton android:id="@+id/imgbtn3" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/marker_red"></imagebutton>
+	    	</linearlayout>
+
+</linearlayout>
+
+	<tablelayout android:id="@+id/TableLayoutTop" android:layout_gravity="left" android:scrollbars="horizontal|vertical" android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarAlwaysDrawHorizontalTrack="true" android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="horizontal">
+		<tablerow android:id="@+id/TableRowTop" android:layout_height="wrap_content">
+
+		</tablerow>
+	</tablelayout>
+
+</linearlayout>
+</linearlayout>

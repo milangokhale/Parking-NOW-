@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/maps"
-          android:icon="@drawable/ic_menu_mapmode"
-          android:title="@string/menu_maps" />
+          android:icon="@drawable/ic_menu_mapmode_small"
+          android:title="Map"/>
     <item android:id="@+id/settings"
-          android:icon="@drawable/ic_menu_preferences"
-          android:title="@string/menu_preferences" />
+          android:icon="@drawable/ic_menu_preferences_small"
+          android:title="@string/menu_preferences"/>
 </menu>
