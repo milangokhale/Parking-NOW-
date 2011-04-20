@@ -2,7 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
  android:orientation="vertical"
  android:layout_width="fill_parent"
-  android:layout_height="fill_parent">
+  android:layout_height="fill_parent"
+  android:background="@drawable/background"
+  >
+  	<RelativeLayout android:orientation="horizontal"
+		android:layout_height="45sp" android:background="@drawable/background_gradient"
+		android:layout_width="fill_parent">
+		
+		<ImageView android:id="@+id/logodark"
+			android:layout_height="wrap_content" android:src="@drawable/logolight"
+			  android:layout_width="wrap_content"
+  android:layout_gravity="center_vertical|fill_horizontal"
+			android:layout_alignParentLeft="true"></ImageView>
+		
+		<ImageView android:id="@+id/refresh_icon"
+			android:layout_height="wrap_content" android:src="@drawable/refresh"
+			  android:layout_width="wrap_content"
+  android:layout_gravity="center_vertical|fill_horizontal"
+			android:layout_alignParentRight="true" android:layout_centerVertical="true"
+			android:onClick="refreshBtn_click"></ImageView>
+		<ProgressBar android:layout_alignParentRight="true" android:layout_height="wrap_content" android:id="@+id/progressBar1" android:layout_width="wrap_content"></ProgressBar>
+
+</RelativeLayout>
   <ListView
    android:id="@+id/ListView01"
    android:layout_height="wrap_content"

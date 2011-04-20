@@ -17,7 +17,7 @@ import android.os.Bundle;
  */
 public class LocationFinder {
 	
-	private final static long MIN_TIME = 60000; //10 minutes
+	private final static long MIN_TIME = 600; //10 minutes
     private final static float MIN_DISTANCE = 1000f; 
     
     private LocationManager locationManager;
@@ -26,6 +26,12 @@ public class LocationFinder {
 	boolean isGpsEnabled = false;
     boolean isNetworkEnabled = false;    
     boolean isLocationFound = false;
+    
+    public LocationFinder(LocationResult result) {
+    	
+    	locationResult = result;
+    	
+    }
     
     /**
 	 * @return the isLocationFound
@@ -78,13 +84,12 @@ public class LocationFinder {
 	 * Gets the current location.
 	 * 
 	 * @param context The context for this location search. 
-	 * @param result?
+	 * @param isLastKnownLocationNeeded If the last known location is to be used.
 	 * @return True if location found; false otherwise.
 	 */
-	public boolean getCurrentLocation(Context context, LocationResult result)
+	public boolean getCurrentLocation(Context context, boolean isLastKnownLocationNeeded)
     {       
-        locationResult = result;
-
+		
         if(locationManager == null) { locationManager = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE); }
         
         //exceptions thrown if provider not enabled
@@ -103,15 +108,18 @@ public class LocationFinder {
         if (isNetworkEnabled) {locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 
         		MIN_TIME, MIN_DISTANCE, locationListenerNetwork);}
 
-        getLastKnownLocation();
+        if (isLastKnownLocationNeeded){ getLastKnownLocation(); }
+        
         return true;
     }
 	
+	public final void removeLocationListeners(){
+		locationManager.removeUpdates(locationListenerGps);
+        locationManager.removeUpdates(locationListenerNetwork);
+	}
+	
     public final void getLastKnownLocation()
-    {
-        //locationManager.removeUpdates(locationListenerGps);
-        //locationManager.removeUpdates(locationListenerNetwork);
-
+    {   
         Location gpsLocation = null;
         Location networkLocation = null;
 

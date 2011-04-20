@@ -4,6 +4,7 @@
 package com.milang.util;
 
 import java.text.DecimalFormat;
+import java.math.*;
 
 /**
  * @author milang
@@ -23,17 +24,24 @@ public class NumberFormat {
 		String str_num_of_decimals = "";
 		DecimalFormat my_decimal_format;
 		
-		if (numOfDecimals < 1)
-			my_decimal_format = new DecimalFormat("#");
 		
-		else {
-			for (int i=0; i < numOfDecimals; i++ ) {
-				str_num_of_decimals += "#";
-			}
-			
-			my_decimal_format = new DecimalFormat("#." + str_num_of_decimals.toString());
+		for (int i=0; i < numOfDecimals; i++ ) {
+			str_num_of_decimals += "#";
 		}
 		
+		my_decimal_format = new DecimalFormat("#." + str_num_of_decimals.toString());
 		return Double.valueOf(my_decimal_format.format(num));
+	}
+	
+	public static Integer roundNumber(double num) {
+		
+		Double n = new Double(num);
+		
+		Math.round(num);
+		BigDecimal b = new BigDecimal(n.toString());
+		b = b.setScale(0, RoundingMode.HALF_UP);
+		
+		Integer x = b.intValue();
+		return x;
 	}
 }

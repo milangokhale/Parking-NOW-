@@ -55,7 +55,7 @@ public class LocationUtil
 	 */
 	public static GeoPoint getGeoPointFromFloats(float lat, float lon) {
 
-		return(new GeoPoint((int)(lat*MILLION),(int)(lat*MILLION)));
+		return(new GeoPoint((int)(lat*MILLION),(int)(lon*MILLION)));
 	}
 	
     /**
