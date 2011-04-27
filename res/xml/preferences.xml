@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        <PreferenceCategory
+                android:title="General Settings">
+                <ListPreference
+                        android:title="Number of Results"
+                        android:summary="The number of parking lots that are displayed."
+                        android:key="pref_numOfResults"
+                        android:defaultValue="4"
+                        android:entries="@array/numOfResults"
+                        android:entryValues="@array/numOfResults" />
+                <PreferenceScreen
+                android:key="SecondPrefScreen"
+                android:title="Parking Lot Details"
+                android:summary="Select which details you wish to view about a parking lot.">
+                <EditTextPreference
+                        android:name="An other EditText Preference"
+                        android:summary="This is a preference in the second PreferenceScreen"
+                        android:title="Edit text"
+                        android:key="SecondEditTextPref" />
+        		</PreferenceScreen>
+        </PreferenceCategory>
+</PreferenceScreen>

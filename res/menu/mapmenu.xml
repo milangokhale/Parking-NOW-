@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/maps"
-          android:title="Map"
+    <item android:id="@+id/list"
+          android:title="List"
           android:icon="@drawable/ic_dialog_map"/>
     <item android:id="@+id/settings"
           android:title="@string/menu_preferences" android:icon="@drawable/ic_menu_preferences"/>
     <item android:id="@+id/refresh"
           android:title="Refresh" android:icon="@drawable/ic_menu_refresh"/>
-    <item android:id="@+id/about"
-          android:title="About" android:icon="@drawable/ic_menu_about"/>
 </menu>
     
     
