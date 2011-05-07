@@ -39,27 +39,9 @@ public class ParkingActivity extends Activity
 	public LocationFinder my_location_finder;
 	//private final static int MAX_NUM_OF_RESULTS = 4;
 	private static String max_num_of_results;
-
 	private final boolean isEmulator = "google_sdk".equals(android.os.Build.PRODUCT);
-	
-	
 	ImageView my_image_view;
-	
 	private SQLiteDatabase db;
-	
-	private void insertRecord(float lng, float lat){		
-
-		ContentValues cv = new ContentValues();
-		cv.put(DataHelper.TITLE, lng);
-		cv.put(DataHelper.VALUE, lat);
-		
-		db.insert(DataHelper.TABLE_NAME, DataHelper.TITLE, cv);
-		//db.close();
-	}
-	
-	private void deleteAll(){
-		this.db.delete(DataHelper.TABLE_NAME, null, null);
-	}
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,14 +49,15 @@ public class ParkingActivity extends Activity
         setContentView(R.layout.listview); 
     	
         my_location_finder = new LocationFinder(my_location_result);        
-        
-        DataHelper openHelper = new DataHelper(this);
-		db = openHelper.getWritableDatabase();
-        
+
         initialize();        
     }
 	
 	public void initialize() {
+		
+		// Open DB
+		DataHelper openHelper = new DataHelper(this);
+		db = openHelper.getWritableDatabase();
 		
 		// Show the indeterminate progress bar
 		ProgressBar dialog = (ProgressBar)findViewById(R.id.progressBar1);
@@ -126,7 +109,6 @@ public class ParkingActivity extends Activity
 			
 			GeoPoint current_location;
 			
-			
 			// if there is no provider on the phone, throw message
 			if ((location==null) && (!isEmulator)) {
 				Toast.makeText(getBaseContext(), "@string/msg_location_not_found", Toast.LENGTH_LONG);
@@ -168,19 +150,10 @@ public class ParkingActivity extends Activity
 			        	array_search_results_short_list.add(array_car_park.get(i));
 			        }
 			        
+			        // Add the search results to the list view
 			        ListView lv1 = (ListView) findViewById(R.id.ListView01);
 			        lv1.setAdapter(new MyCustomBaseAdapter(getBaseContext(), array_search_results_short_list));
 			        
-		    		deleteAll();		    		
-		    		
-			        // Load data into db 
-			        // This will get used by the map if need be
-			        for (int i=0; i < maxNumOfResults; i++) {
-			        	float lat = array_search_results_short_list.get(i).getLat();
-			        	float lng = array_search_results_short_list.get(i).getLng();
-			        	insertRecord(lat, lng);
-			        }
-			       
 			        lv1.setOnItemClickListener(new OnItemClickListener() {
 			        	
 				         public void onItemClick(AdapterView<?> a, View v, int position, long id) {
@@ -190,6 +163,9 @@ public class ParkingActivity extends Activity
 				     		startActivity(intent);
 			         	 }
 			        });
+			        
+			        // Store the search results so that they can be accessed by the map
+			        storeSearchResults(array_search_results_short_list, maxNumOfResults);
 			    }
 				
 				catch (Exception ex) {
@@ -214,6 +190,10 @@ public class ParkingActivity extends Activity
 	        return true;
 	    case R.id.maps:
 	    	showMaps();
+	    case R.id.about:
+	    	showNotImplementedMessage();
+	    case R.id.refresh:
+	    	initialize();
 	    default:
 	        return super.onOptionsItemSelected(item);
 	    }
@@ -228,6 +208,37 @@ public class ParkingActivity extends Activity
 	private void showSettings(){
 		Intent settingsActivity = new Intent(getBaseContext(), PreferencesActivity.class);
 		startActivity(settingsActivity);
+	}
+	
+	private void showNotImplementedMessage() {
+		Toast.makeText(getBaseContext(), "This feature has not been implemented yet.", Toast.LENGTH_LONG);
+	}
+	
+	private void storeSearchResults(ArrayList<CarparkNow> array_search_results, int maxNumOfResults) {
+        
+		deleteAllRecords();
+		
+        // Load data into db 
+        // This will get used by the map if need be
+        for (int i=0; i < maxNumOfResults; i++) {
+        	float lat = array_search_results.get(i).getLat();
+        	float lng = array_search_results.get(i).getLng();
+        	insertRecord(lat, lng);
+        }
+	}
+	
+	private void insertRecord(float lng, float lat){		
+
+		ContentValues cv = new ContentValues();
+		cv.put(DataHelper.TITLE, lng);
+		cv.put(DataHelper.VALUE, lat);
+		
+		db.insert(DataHelper.TABLE_NAME, DataHelper.TITLE, cv);
+		//db.close();
+	}
+	
+	private void deleteAllRecords(){
+		this.db.delete(DataHelper.TABLE_NAME, null, null);
 	}
 	
 	/*

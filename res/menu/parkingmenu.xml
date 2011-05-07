@@ -4,10 +4,10 @@
     <item android:id="@+id/maps"
           android:title="Map"
           android:icon="@drawable/ic_dialog_map"/>
-    <item android:id="@+id/settings"
-          android:title="@string/menu_preferences" android:icon="@drawable/ic_menu_preferences"/>
     <item android:id="@+id/refresh"
           android:title="Refresh" android:icon="@drawable/ic_menu_refresh"/>
+    <item android:id="@+id/settings"
+          android:title="@string/menu_preferences" android:icon="@drawable/ic_menu_preferences"/>
     <item android:id="@+id/about"
           android:title="About" android:icon="@drawable/ic_menu_about"/>
 </menu>

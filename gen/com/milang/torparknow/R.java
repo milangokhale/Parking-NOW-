@@ -19,12 +19,12 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int android_boot_image=0x7f020000;
-        public static final int background=0x7f020001;
-        public static final int background_gradient=0x7f020002;
-        public static final int bg4=0x7f020003;
-        public static final int ic_dialog_map=0x7f020004;
-        public static final int ic_menu_about=0x7f020005;
+        public static final int background=0x7f020000;
+        public static final int background_gradient=0x7f020001;
+        public static final int bg4=0x7f020002;
+        public static final int ic_dialog_map=0x7f020003;
+        public static final int ic_menu_about=0x7f020004;
+        public static final int ic_menu_list=0x7f020005;
         public static final int ic_menu_preferences=0x7f020006;
         public static final int ic_menu_refresh=0x7f020007;
         public static final int icon=0x7f020008;
@@ -32,12 +32,13 @@ public final class R {
         public static final int logolight=0x7f02000a;
         public static final int marker_red=0x7f02000b;
         public static final int refresh=0x7f02000c;
+        public static final int splashscreen=0x7f02000d;
     }
     public static final class id {
         public static final int ListView01=0x7f0b0010;
         public static final int TableLayoutTop=0x7f0b0006;
         public static final int TableRowTop=0x7f0b0007;
-        public static final int about=0x7f0b0019;
+        public static final int about=0x7f0b0017;
         public static final int buttonlayout=0x7f0b0000;
         public static final int buttonlayout2=0x7f0b0001;
         public static final int carpark_calcDistance=0x7f0b0008;
@@ -47,19 +48,18 @@ public final class R {
         public static final int imgbtn1=0x7f0b0002;
         public static final int imgbtn2=0x7f0b0004;
         public static final int imgbtn3=0x7f0b0005;
-        public static final int list=0x7f0b0015;
+        public static final int list=0x7f0b0014;
         public static final int logodark=0x7f0b000d;
-        public static final int mainlayout=0x7f0b0011;
         public static final int maps=0x7f0b0018;
-        public static final int mapview=0x7f0b0012;
+        public static final int mapview=0x7f0b0011;
         public static final int metric_type=0x7f0b0009;
         public static final int progressBar1=0x7f0b000f;
-        public static final int refresh=0x7f0b0017;
+        public static final int refresh=0x7f0b0015;
         public static final int refresh_icon=0x7f0b000e;
         public static final int settings=0x7f0b0016;
-        public static final int splashscreen=0x7f0b0014;
+        public static final int splashscreen=0x7f0b0013;
         public static final int txtTest=0x7f0b0003;
-        public static final int widget30=0x7f0b0013;
+        public static final int widget30=0x7f0b0012;
     }
     public static final class layout {
         public static final int actionbar=0x7f030000;

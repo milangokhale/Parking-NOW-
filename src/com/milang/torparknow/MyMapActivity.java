@@ -15,6 +15,8 @@ import com.milang.location.LocationUtil;
 import com.milang.torparknow.data.DataHelper;
 
 //import android.content.Context;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
@@ -26,6 +28,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 //import android.widget.Toast;
 
@@ -137,5 +140,29 @@ public class MyMapActivity extends MapActivity {
 	    MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.mapmenu, menu);
 	    return true;
+	}
+	
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	    case R.id.settings:
+	        showSettings();
+	        return true;
+	    case R.id.list:
+	    	showList();
+	    default:
+	        return super.onOptionsItemSelected(item);
+	    }
+	}
+	
+	public void showList() {
+		Intent intent = new Intent();
+		intent.setComponent(new ComponentName(this, ParkingActivity.class));
+		startActivity(intent);
+	}
+	
+	private void showSettings(){
+		Intent settingsActivity = new Intent(getBaseContext(), PreferencesActivity.class);
+		startActivity(settingsActivity);
 	}
 }
