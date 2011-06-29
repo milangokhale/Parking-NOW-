@@ -4,10 +4,30 @@
                 android:title="General Settings">
                 <ListPreference
                         android:title="Number of Results"
-                        android:summary="The number of parking lots that are displayed."
+                        android:summary="The number of parking lots that are displayed on the map or list."
                         android:key="pref_numOfResults"
                         android:defaultValue="4"
                         android:entries="@array/numOfResults"
                         android:entryValues="@array/numOfResults" />
+                <ListPreference
+                        android:title="Display Type"
+                        android:summary="Describes whether to display results as a map or a list by default."
+                        android:key="pref_defaultdisplay"
+                        android:defaultValue="Map"
+                        android:entries="@array/type"
+                        android:entryValues="@array/type" />
         </PreferenceCategory>
+        
+        <PreferenceCategory
+                android:title="Other Information">
+                <Preference
+                android:title="Version"
+                android:summary="@string/versionNum"
+                android:key="pref_version" />
+                <Preference
+                android:title="Developer Website"
+                android:summary="http://www.writtenbymilan.com"
+                android:key="pref_URL" />
+        </PreferenceCategory>
+        
 </PreferenceScreen>

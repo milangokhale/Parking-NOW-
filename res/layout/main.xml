@@ -15,6 +15,7 @@
 			  android:layout_width="wrap_content"
   android:layout_gravity="center_vertical|fill_horizontal"
 			android:layout_alignParentLeft="true"></ImageView>
+			
 		
 		<ImageView android:id="@+id/refresh_icon"
 			android:layout_height="wrap_content" android:src="@drawable/refresh"
@@ -25,6 +26,7 @@
 		<ProgressBar android:layout_alignParentRight="true" android:layout_height="wrap_content" android:id="@+id/progressBar1" android:layout_width="wrap_content"></ProgressBar>
 
 </RelativeLayout>
+
     <com.google.android.maps.MapView
         android:id="@+id/mapview"
         android:layout_width="fill_parent"
@@ -32,5 +34,19 @@
         android:clickable="true"
         android:apiKey="0m7lyxaorQRVA_0bWLuY31PA3bxvf8mPzZ_kxSw"
     />
+
+<!-- Production 
+        -->
+    
+    <!-- Debug 
+
+    <com.google.android.maps.MapView
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:apiKey="0m7lyxaorQRVZs46mpsO0TGIP-EHh9roDyO0Tiw"
+    />
+        -->
 
 </LinearLayout>

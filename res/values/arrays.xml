@@ -6,6 +6,10 @@
         <item>3</item>
         <item>4</item>
     </string-array> 
+<string-array name="type">
+        <item>Map</item>
+        <item>List</item>
+    </string-array>     
 </resources>
 
 

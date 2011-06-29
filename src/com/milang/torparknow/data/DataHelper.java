@@ -45,4 +45,44 @@ public class DataHelper extends SQLiteOpenHelper {
        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
        onCreate(db);
     } 
+	
+	//private void getDataFromDB(){
+	
+		 /*
+        Cursor c = fetchAllRecords();
+        
+        float xyz;
+        float lngtest;
+        
+        int count = 0;
+        
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+        	xyz = c.getFloat(0);
+            lngtest = c.getFloat(1);
+            GeoPoint p = LocationUtil.getGeoPointFromFloats(xyz, lngtest);
+            itemizedOverlay.addOverlay(new OverlayItem(p,"", ""));
+            count++;
+            
+            if (count ==1)
+            	// Center the map on the GeoPoint object instance 
+                mapController.setCenter(p);
+            	
+       	    c.moveToNext();
+        }
+        
+        db.close();
+        
+        */
+		
+		
+	//}
+	
+	 //public Cursor fetchAllRecords() {
+	    	
+	    	//DataHelper openHelper = new DataHelper(getBaseContext());
+	    	//db = openHelper.getReadableDatabase();
+	    	
+	    	//return db.query(DataHelper.TABLE_NAME, new String[] {DataHelper.TITLE, DataHelper.VALUE}, null, null, null, null, null);
+	  //  }
 }

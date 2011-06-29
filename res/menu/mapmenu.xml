@@ -2,48 +2,11 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/list"
-          android:title="List"
+          android:title="@string/menu_list"
           android:icon="@drawable/ic_menu_list"/>
-              <item android:id="@+id/refresh"
-          android:title="Refresh" android:icon="@drawable/ic_menu_refresh"/>
     <item android:id="@+id/settings"
           android:title="@string/menu_preferences" android:icon="@drawable/ic_menu_preferences"/>
-    <item android:id="@+id/about"
-          android:title="About" android:icon="@drawable/ic_menu_about"/>
 </menu>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     

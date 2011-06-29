@@ -5,23 +5,17 @@ package com.milang.torparknow;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import com.google.android.maps.GeoPoint;
 import com.milang.location.LocationUtil;
 
 import android.content.Context;
-
-
-/*
-import java.io.IOException;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
-
-import android.content.res.Resources;
-import android.content.res.XmlResourceParser;
-import com.milang.helloworld.R;
-
+import android.content.SharedPreferences;
+import android.location.Location;
+import android.preference.PreferenceManager;
+import android.util.Log;
 
 
 /**
@@ -30,7 +24,29 @@ import com.milang.helloworld.R;
  */
 public class ParkingHelper {
 	
+	// Variable declarations
+	private static final boolean isEmulator = "google_sdk".equals(android.os.Build.PRODUCT);
+	public final static String TAG = "locationNotFound";
+	public static String MAX_NUM_OF_RESULTS;
+	public static String DISPLAY_TYPE;
 	
+
+	public static void initSettings(Context context){
+		
+		// Load settings
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+		MAX_NUM_OF_RESULTS = prefs.getString("pref_numOfResults","4");
+		DISPLAY_TYPE = prefs.getString("pref_defaultdisplay","Map");
+		
+		//prefs.edit().putInt("pref_version", R.string.versionNum).commit();
+	}
+	
+	/**
+	 * Loads the car parks from JSON file.  
+	 * 
+	 * @param context Given context for the activity.  Use getBaseContext() if needed.
+	 * @param currentLocation The current location that is used to calculate distance from parking lot.
+	 */
 	public static ArrayList<CarparkNow> loadCarparkNow(Context context, GeoPoint currentLocation){
 		
 		// Get all Green P lots from JSON
@@ -58,6 +74,91 @@ public class ParkingHelper {
 		
 		return myCarparkNowArray;
 	}
+	
+    /**
+	 * Gets the nearest parking lots to the given location.  
+	 * 
+	 * @param context Given context for the activity.  Use getBaseContext() if needed.
+	 * @param location The provided location to calculate the nearest parking lots.
+	 * @param numOfResults The number of parking lots to be returned which are closest to the given location.
+	 */
+	public static ArrayList<CarparkNow> getNearestParkingLots(Context context, Location location, int numOfResults){
+				
+		GeoPoint current_location = null;
+		
+		// if there is no provider on the phone, throw message
+		if ((location==null) && (!isEmulator)) {
+			Log.d(TAG, "@string/msg_location_not_found");
+		}
+		
+		else {
+			if (isEmulator) {
+				//Ritika's place: "43.654278", "-79.376202"
+				//Nina's place: "43.66563", "-79.38750"
+				//Darnborough: "43.80465", "-79.31049"
+				current_location = LocationUtil.getGeoPointFromStrings("43.66563", "-79.38750");
+			}
+			
+			else {
+				current_location = LocationUtil.getGeoPointFromLocation(location);
+			}
+		}
+	
+		// Get all parking location address names and their calculated distances
+		ArrayList<CarparkNow> array_car_park = loadCarparkNow(context, current_location);
+		
+		// Sort all parking locations by proximity to current location
+        Collections.sort(array_car_park, new Comparator<Object>(){
+      	   
+            public int compare(Object o1, Object o2) {
+              CarparkNow p1 = (CarparkNow) o1;
+              CarparkNow p2 = (CarparkNow) o2;
+         	  
+         	  return p1.getCalcDistance().compareTo(p2.getCalcDistance());
+            }
+        });
+        
+        final ArrayList<CarparkNow> array_search_results_short_list = new ArrayList<CarparkNow>();
+        
+        // Short list the top n results only
+        for (int i=0; i < numOfResults; i++) {
+        	array_search_results_short_list.add(array_car_park.get(i));
+        }
+        
+        return array_search_results_short_list;
+	}
+	
+	public boolean isNewLocationFound() {
+		
+		return true; 
+		//my_location_finder.isLocationFound(); 
+	}
+
+	/*
+	public static void storeSearchResults(ArrayList<CarparkNow> array_search_results, int maxNumOfResults) {
+        
+		db.delete(DataHelper.TABLE_NAME, null, null);
+		
+        // Load data into db 
+        // This will get used by the map if need be
+        for (int i=0; i < maxNumOfResults; i++) {
+        	float lat = array_search_results.get(i).getLat();
+        	float lng = array_search_results.get(i).getLng();
+        	insertRecord(lat, lng);
+        }
+	}
+	
+	private void insertRecord(float lng, float lat){		
+
+		ContentValues cv = new ContentValues();
+		cv.put(DataHelper.TITLE, lng);
+		cv.put(DataHelper.VALUE, lat);
+		
+		db.insert(DataHelper.TABLE_NAME, DataHelper.TITLE, cv);
+		//db.close();
+	}
+	
+	*/
 	
 	
 

@@ -4,7 +4,11 @@
 <string name="app_name">Parking NOW!</string>
 <string name="msg_finding_location">Loading.  Please wait...</string>
 <string name="menu_preferences">Settings</string>
-<string name="menu_maps">Map</string>
+<string name="menu_map">Map</string>
+<string name="menu_search">Search</string>
+<string name="menu_about">About</string>
+<string name="menu_list">List</string>
+<string name="versionNum">1.4.2</string>
 <string name="msg_location_not_found">Your location could not be found! Make sure your network or GPS location services are turned on.</string>
 <string-array name="quotes">
      <item>"Any intelligent fool can make things bigger, more complex, and more violent. It takes a touch of genius -- and a lot of courage -- to move in the opposite direction."</item>

@@ -1,21 +1,13 @@
 package com.milang.torparknow;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-
-import com.google.android.maps.GeoPoint;
 
 import android.app.Activity;
 import android.content.ComponentName;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,24 +16,19 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.milang.location.LocationFinder;
 import com.milang.location.LocationFinder.LocationResult;
 
-import com.milang.location.LocationUtil;
-import com.milang.torparknow.data.DataHelper;
-
 
 public class ParkingActivity extends Activity 
 {	
 	public LocationFinder my_location_finder;
-	//private final static int MAX_NUM_OF_RESULTS = 4;
-	private static String max_num_of_results;
+	
 	private final boolean isEmulator = "google_sdk".equals(android.os.Build.PRODUCT);
 	ImageView my_image_view;
-	private SQLiteDatabase db;
+	//private SQLiteDatabase db;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,8 +43,8 @@ public class ParkingActivity extends Activity
 	public void initialize() {
 		
 		// Open DB
-		DataHelper openHelper = new DataHelper(this);
-		db = openHelper.getWritableDatabase();
+		//DataHelper openHelper = new DataHelper(this);
+		//db = openHelper.getWritableDatabase();
 		
 		// Show the indeterminate progress bar
 		ProgressBar dialog = (ProgressBar)findViewById(R.id.progressBar1);
@@ -66,10 +53,6 @@ public class ParkingActivity extends Activity
 		// Hide the refresh icon since we are using it
 		my_image_view = (ImageView)findViewById(R.id.refresh_icon);
 		my_image_view.setVisibility(View.INVISIBLE);
-		
-		// Load settings
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-		max_num_of_results = prefs.getString("pref_numOfResults","4");
 		
 		 //my_location_finder = new LocationFinder(my_location_result);
 		 my_location_finder.getCurrentLocation(getBaseContext(), isEmulator);
@@ -98,6 +81,7 @@ public class ParkingActivity extends Activity
 			
 			boolean isNewLocationFromProvider = my_location_finder.isLocationFound(); 
 			
+			// Change menu icons
 			if (isNewLocationFromProvider) {
 				ProgressBar dialog = (ProgressBar)findViewById(R.id.progressBar1);
 				dialog.setVisibility(View.INVISIBLE);
@@ -107,70 +91,32 @@ public class ParkingActivity extends Activity
 				my_image_view.setVisibility(View.VISIBLE);
 			}
 			
-			GeoPoint current_location;
+			try {
+				
+				int maxNumOfResults = Integer.parseInt(ParkingHelper.MAX_NUM_OF_RESULTS);
+				
+				final ArrayList<CarparkNow> array_search_results_short_list = ParkingHelper.getNearestParkingLots(getBaseContext(), location, maxNumOfResults);
 			
-			// if there is no provider on the phone, throw message
-			if ((location==null) && (!isEmulator)) {
-				Toast.makeText(getBaseContext(), "@string/msg_location_not_found", Toast.LENGTH_LONG);
+		        // Add the search results to the list view
+		        ListView lv1 = (ListView) findViewById(R.id.ListView01);
+		        lv1.setAdapter(new MyCustomBaseAdapter(getBaseContext(), array_search_results_short_list));
+		        
+		        lv1.setOnItemClickListener(new OnItemClickListener() {
+		        	
+			         public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+			        	 
+			        	Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri
+			     				.parse("google.navigation:q=" + array_search_results_short_list.get(position).getStreetAddress()));
+			     		startActivity(intent);
+		         	 }
+		        });
+		        
+		        // Store the search results so that they can be accessed by the map activity
+		        //storeSearchResults(array_search_results_short_list, maxNumOfResults);		
 			}
-			
-			else {
-				if (isEmulator) {
-					//Ritika's place: "43.654278", "-79.376202"
-					//Nina's place: "43.66563", "-79.38750"
-					//Darnborough: "43.80465", "-79.31049"
-					current_location = LocationUtil.getGeoPointFromStrings("43.66563", "-79.38750");
-				}
 				
-				else {
-					current_location = LocationUtil.getGeoPointFromLocation(location);
-				}
-				
-				try {
-					// Get all parking location address names and their calculated distances
-					ArrayList<CarparkNow> array_car_park = ParkingHelper.loadCarparkNow(getBaseContext(), current_location);
-					
-					// Sort all parking locations by proximity to current location
-			        Collections.sort(array_car_park, new Comparator<Object>(){
-			      	   
-			            public int compare(Object o1, Object o2) {
-			              CarparkNow p1 = (CarparkNow) o1;
-			              CarparkNow p2 = (CarparkNow) o2;
-			         	  
-			         	  return p1.getCalcDistance().compareTo(p2.getCalcDistance());
-			            }
-			        });
-			        
-			        final ArrayList<CarparkNow> array_search_results_short_list = new ArrayList<CarparkNow>();
-			        
-			        int maxNumOfResults = Integer.parseInt(max_num_of_results);
-			        
-			        // Show top n results only
-			        for (int i=0; i < maxNumOfResults; i++) {
-			        	array_search_results_short_list.add(array_car_park.get(i));
-			        }
-			        
-			        // Add the search results to the list view
-			        ListView lv1 = (ListView) findViewById(R.id.ListView01);
-			        lv1.setAdapter(new MyCustomBaseAdapter(getBaseContext(), array_search_results_short_list));
-			        
-			        lv1.setOnItemClickListener(new OnItemClickListener() {
-			        	
-				         public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-				        	 
-				        	Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri
-				     				.parse("google.navigation:q=" + array_search_results_short_list.get(position).getStreetAddress()));
-				     		startActivity(intent);
-			         	 }
-			        });
-			        
-			        // Store the search results so that they can be accessed by the map
-			        storeSearchResults(array_search_results_short_list, maxNumOfResults);
-			    }
-				
-				catch (Exception ex) {
-					ex.printStackTrace();
-				}
+			catch (Exception ex) {
+				ex.printStackTrace();
 			}
 		}
 	};
@@ -185,15 +131,12 @@ public class ParkingActivity extends Activity
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle item selection
 	    switch (item.getItemId()) {
-	    case R.id.settings:
+	    case R.id.settingsMenu:
 	        showSettings();
 	        return true;
-	    case R.id.maps:
+	    case R.id.mapMenu:
 	    	showMaps();
-	    case R.id.about:
-	    	showNotImplementedMessage();
-	    case R.id.refresh:
-	    	initialize();
+	    	return true;
 	    default:
 	        return super.onOptionsItemSelected(item);
 	    }
@@ -209,13 +152,12 @@ public class ParkingActivity extends Activity
 		Intent settingsActivity = new Intent(getBaseContext(), PreferencesActivity.class);
 		startActivity(settingsActivity);
 	}
+}
 	
-	private void showNotImplementedMessage() {
-		Toast.makeText(getBaseContext(), "This feature has not been implemented yet.", Toast.LENGTH_LONG);
-	}
-	
+	/*
 	private void storeSearchResults(ArrayList<CarparkNow> array_search_results, int maxNumOfResults) {
         
+		// Delete all previous search results
 		deleteAllRecords();
 		
         // Load data into db 
@@ -241,6 +183,7 @@ public class ParkingActivity extends Activity
 		this.db.delete(DataHelper.TABLE_NAME, null, null);
 	}
 	
+}
 	/*
 	public class ShowProgressDialog extends AsyncTask<Void, Integer, Void> {
 		
@@ -291,4 +234,3 @@ public class ParkingActivity extends Activity
 	}
 	
 	*/
-}

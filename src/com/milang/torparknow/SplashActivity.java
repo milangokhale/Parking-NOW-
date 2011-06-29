@@ -2,12 +2,10 @@ package com.milang.torparknow;
 
 
 import com.milang.location.LocationFinder;
-import com.milang.location.LocationFinder.LocationResult;
 
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.view.*;
 
@@ -15,6 +13,7 @@ public class SplashActivity extends Activity {
 	
 	protected boolean _active = true;
     protected int _splashTime = 3000; // show splash for 3 secs
+    
     
     public LocationFinder my_location_finder;
 	
@@ -24,8 +23,8 @@ public class SplashActivity extends Activity {
 	       super.onCreate(savedInstanceState);
 	       setContentView(R.layout.mainmenu);   
 	       
-	     my_location_finder = new LocationFinder(my_location_result);
-		 my_location_finder.getCurrentLocation(getBaseContext(), false);
+	     //my_location_finder = new LocationFinder(my_location_result);
+		 //my_location_finder.getCurrentLocation(getBaseContext(), false);
 	       
 	    // thread for displaying the SplashScreen
 	        Thread splashThread = new Thread() {
@@ -43,8 +42,19 @@ public class SplashActivity extends Activity {
 	                    // do nothing
 	                } finally {
 	                    finish();
-	                    Intent intent = new Intent();
-	            		intent.setComponent(new ComponentName(getBaseContext(), ParkingActivity.class));
+	                    
+	                    ParkingHelper.initSettings(getBaseContext());
+	            		
+	            		Intent intent = new Intent();
+	            			            		
+	            		if (ParkingHelper.DISPLAY_TYPE.equalsIgnoreCase("Map")) {
+	            			intent.setComponent(new ComponentName(getBaseContext(), MyMapActivity.class));
+	            		}
+	            		
+	            		else {
+	            			intent.setComponent(new ComponentName(getBaseContext(), ParkingActivity.class));
+	            		}
+	            		
 	            		startActivity(intent);	
 	                    stop();
 	                }
@@ -55,15 +65,9 @@ public class SplashActivity extends Activity {
 	        //new ShowProgressDialog().execute();
     }
 	
-	public LocationResult my_location_result = new LocationResult(){
+	//public LocationResult my_location_result = new LocationResult(){
 		
-		@Override
-		public void gotLocation(Location location) {
-			_active = false;
-		}
-	};
-	
-	public void MapsBtn_Click(View view)
+		public void MapsBtn_Click(View view)
 	{	
 		//Intent intent = new Intent();
 		//intent.setComponent(new ComponentName(this, MapMain.class));
