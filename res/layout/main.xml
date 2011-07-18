@@ -26,7 +26,7 @@
 		<ProgressBar android:layout_alignParentRight="true" android:layout_height="wrap_content" android:id="@+id/progressBar1" android:layout_width="wrap_content"></ProgressBar>
 
 </RelativeLayout>
-
+<!-- Production 
     <com.google.android.maps.MapView
         android:id="@+id/mapview"
         android:layout_width="fill_parent"
@@ -35,10 +35,9 @@
         android:apiKey="0m7lyxaorQRVA_0bWLuY31PA3bxvf8mPzZ_kxSw"
     />
 
-<!-- Production 
+
         -->
     
-    <!-- Debug 
 
     <com.google.android.maps.MapView
         android:id="@+id/mapview"
@@ -47,6 +46,8 @@
         android:clickable="true"
         android:apiKey="0m7lyxaorQRVZs46mpsO0TGIP-EHh9roDyO0Tiw"
     />
+    
+    <!-- Debug 
         -->
 
 </LinearLayout>
